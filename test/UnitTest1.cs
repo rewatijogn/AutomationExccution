@@ -9,37 +9,43 @@ namespace test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+ public void TestMethod1()
         {
-            //string curpath = Directory.GetCurrentDirectory();
-            //string mailbox = String.Format("{0}\\inbox", curpath);
+            IWebDriver crmDriver = new ChromeDriver();
+            crmDriver.Navigate().GoToUrl("https://www.google.co.in");
+            IWebElement SearchTxt = crmDriver.FindElement(By.XPath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input"));
+            SearchTxt.SendKeys("GitHub");
+            SearchTxt.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            crmDriver.Close();
 
-            //// If the folder is not existed, create it.
-            //if (!Directory.Exists(mailbox))
-            //{
-            //    Directory.CreateDirectory(mailbox);
-            //}
-            //MailServer oServer = new MailServer("outlook.office365.com", "rewati.jog@infinx.com", "Aboli10#", ServerProtocol.Imap4);
-            ////outlook.office365.com
-            //// MailServer oServer = new MailServer("imap.gmail.com", "rewatijogn@gmail.com", "#Rewat!N07", ServerProtocol.Imap4);
-            //MailClient oClient = new MailClient("TryIt");
 
-            //// Set SSL connection
-            //oServer.SSLConnection = true;
+        }
+        
+                [TestMethod]
 
-            //// Set 993 IMAP4 SSL port
-            //oServer.Port = 993;
-            //oClient.Connect(oServer);
-            
-            //MailInfo[] infos = oClient.GetMailInfos();
-            //int mcnt = oClient.GetMailCount();
-            //MailInfo info = infos[mcnt-1];
-            //Mail oMail = oClient.GetMail(info);            
-            //var msg = oMail.TextBody;
-            //string strSub = oMail.Subject;
-            //var strFrm = oMail.From;
-            //var dt = oMail.ReceivedDate;
-            //var strto = oMail.To;
+        public void TestMethod3()
+        {
+            IWebDriver crmDriver = new ChromeDriver();
+            crmDriver.Navigate().GoToUrl("https://www.google.co.in");
+            IWebElement SearchTxt = crmDriver.FindElement(By.XPath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input"));
+            SearchTxt.SendKeys("GitHub2");
+            SearchTxt.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            crmDriver.Close();
+
+
+        }
+        [TestMethod]
+        public void TestMethod2()
+        {
+            IWebDriver crmDriver = new ChromeDriver();
+            crmDriver.Navigate().GoToUrl("https://www.google.co.in");
+            IWebElement SearchTxt = crmDriver.FindElement(By.XPath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input"));
+            SearchTxt.SendKeys("GitHub1");
+            SearchTxt.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            crmDriver.Close();
 
 
         }
